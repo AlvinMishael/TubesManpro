@@ -11,4 +11,4 @@ Untuk Dearen:
 Untuk William:
 -Buat Branch Nama William
 -Buat File nama BranchWilliam
--Isi file dengan html untuk fitur pilih nama top 10
+-Isi file dengan html untuk fitur pilih dan pilih buku nama top 10
