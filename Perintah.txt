@@ -1,14 +1,14 @@
 Untuk Vito:
 -Buat Branch Nama Vito
 -Buat File nama BranchVito
--Isi file dengan txt isi nama lengkap + npm
+-Isi file dengan html untuk fitur grafik & pilih buku
 
 Untuk Dearen:
 -Buat Branch Nama Dearen
 -Buat File nama BranchDearen
--Isi file dengan txt isi nama lengkap + npm
+-Isi file dengan html untuk fitur graf tidak berarah
 
 Untuk William:
 -Buat Branch Nama William
 -Buat File nama BranchWilliam
--Isi file dengan txt isi nama lengkap + npm
+-Isi file dengan html untuk fitur pilih nama top 10
