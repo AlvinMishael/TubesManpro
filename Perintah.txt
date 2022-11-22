@@ -1,14 +1,11 @@
 Untuk Vito:
 -Buat Branch Nama Vito
--Buat File nama BranchVito
--Isi file dengan html untuk fitur grafik & pilih buku
+-Isi file dengan html untuk fitur diagram bar dan pilih buku
 
 Untuk Dearen:
 -Buat Branch Nama Dearen
--Buat File nama BranchDearen
 -Isi file dengan html untuk fitur graf tidak berarah
 
 Untuk William:
 -Buat Branch Nama William
--Buat File nama BranchWilliam
--Isi file dengan html untuk fitur pilih dan pilih buku nama top 10
+-Isi file dengan html untuk fitur pilih nama-nama top 10
