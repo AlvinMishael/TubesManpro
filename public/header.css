@@ -1,0 +1,29 @@
+.containerall{
+    display: flex;
+    flex-direction: row;
+}
+
+.containergraf{
+    display: flex;
+    margin-left: 10px;
+    margin-right: 10px;
+    text-align: center;
+}
+
+.containerpilihbuku{
+    display: flex;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.containerfrekuensi{
+    display: flex;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.containerhome{
+    display: flex;
+    margin-left: 10px;
+    margin-right: 10px;
+}
