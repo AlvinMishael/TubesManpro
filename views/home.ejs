@@ -1,55 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <title>Game of Thrones</title>
-    <link rel="stylesheet" href="home.css">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel="stylesheet" href="header.css">
+    <link rel="stylesheet" href="home.css">
+    <title>Game of Thrones: Home</title>
 </head>
+
 <body>
-    <main>
-        <h1>Game of Thrones</h1>
-    </main>
-    <div class="drawer">
-        <div class="container">
-            <div class="navigation">
-                <ul>
-                    <li>
-                         <a href="/halamangraf">
-                            <span class="icon"><i class="fa fa-users" aria-hidden="true"></i>
-                            </span>
-                            <span class="title">Interaction graph</span>
-                         </a>
-                    </li>
-                    <li>
-                        <a href="/pilihbuku">
-                           <span class="icon"><i class="fa fa-bar-chart" aria-hidden="true"></i>
-                           </span>
-                           <span class="title">Bar Chart</span>
-                        </a>
-                   </li>
-                    <li>
-                        <a href="/frekuensikarakter">
-                        <span class="icon"><i class="fa fa-desktop" aria-hidden="true"></i>
-                        </span>
-                        <span class="title">Character Frequency</span>
-                        </a>
-                    </li>
-                </ul>
+    <header>
+        <nav>
+            <img src="gameofthrones-title-nobackground.png">
+            <div id="nav-links">
+                <a href="/">Home</a>
+                <a href="/pilih-buku">Pilih Buku</a>
+                <a href="/pilih-nama">Pilih Nama</a>
+                <a href="/graf">Graf</a>
             </div>
-            <div class="toggle">
-            
+        </nav>
+    </header>
+    <section>
+        <div id="penjelasan">
+            <img src="game-of-thrones-1-1920x1080.jpg">
+            <div>
+                <div>
+                    <h1>Game of Thrones</h1>
+                    <p>Trouble is brewing in Westeros. For the inhabitants of this world, control of the Iron Throne holds the lure of great power. But in a land where seasons can last a lifetime, winter is coming...and beyond the Great Wall that protects them, a forgotten evil has returned. HBO presents this epic series based on the book series A Song of Ice and Fire by George R.R. Martin.</p>
+                </div>
             </div>
         </div>
-        <script>
-            const navigation =document.querySelector('.navigation');
-            document.querySelector('.toggle').onclick = function(){
-                this.classList.toggle('active')
-                navigation.classList.toggle('active')
-            }
-        </script>
-    </div>
-    
+        <h1>Panduan Memahami Game of Thrones</h1>
+        <p>Website ini membantu kalian, para penggemar Game of Thrones, untuk lebih mendalami alur cerita dan
+            karakter-karakter Game of Thrones dengan tools berikut!</p>
+        <div id="fitur-container">
+            <div class="card">
+                <h1>TOP 10 Karakter yang Paling sering Berinteraksi</h1>
+                <p>Kamu dapat mengetahui karakter mana saja yang paling aktif dalam suatu buku Game of Thrones!</p>
+                <button>Mulai</button>
+            </div>
+            <div class="card">
+                <h1>Frekuensi Interaksi Karakter</h1>
+                <p>Kamu dapat mengetahui frekuensi interaksi karakter yang kamu sukai dengan karakter lainnya dalam buku
+                    Game of Thrones yang kamu inginkan!</p>
+                <button>Mulai</button>
+            </div>
+            <div class="card">
+                <h1>Graf Interaksi Karakter</h1>
+                <p>Visualisasi interaksi antarkarakter tidak pernah lebih mudah!</p>
+                <p>Kamu juga dapat melihat detail dari interaksi karakter yang kamu inginkan!</p>
+                <button>Mulai</button>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <p>Dibuat oleh Alvin and The Chipmunks</p>
+        <ul>
+            <li>Alvin Mishael Halim</li>
+            <li>Alexander Bleuvito Fevrier</li>
+            <li>Dearen Hippy</li>
+            <li>William Nehemia</li>
+            </div>
+    </footer>
 </body>
+
 </html>
