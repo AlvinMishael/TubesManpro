@@ -14,7 +14,8 @@ module.exports = {
         'poppins': ["'Poppins'", 'sans-serif']
       },
       backgroundImage: {
-        'pattern': "linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0)), url('bgpilihnama.jpg')"
+        'pattern': "linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0)), url('bgpilihnama.jpg')",
+        'pattern2': "linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0)), url('game-of-thrones-1-1920x10801 - Copy1.jpg')"
       },
       borderWidth: {
         '1': "border-width: 1px"

@@ -11,21 +11,7 @@
 </head>
 
 <body class="bg-body font-poppins text-2xl text-text-color">
-    <header class="py-6 px-24 mx-auto">
-        <nav>
-            <div class="container flex justify-center mx-auto">
-                <a href="/">
-                    <img src="game-of-thrones-fonts-1-removebg-preview.png" />
-                </a>
-            </div>
-            <div id="nav-links" class="flex justify-center space-x-12">
-                <a href="/" class="hover:text-sub-color">Home</a>
-                <a href="/pilih-buku" class="hover:text-sub-color">Pilih Buku</a>
-                <a href="/pilih-nama" class="hover:text-sub-color">Pilih Nama</a>
-                <a href="/graf" class="hover:text-sub-color">Graf</a>
-            </div>
-        </nav>
-    </header>
+    <%- include('./header.ejs')  %>
     <div id="content-wrapper" class="px-24 mx-auto mt-8">
         <div id="form-wrapper" class="bg-pattern bg-cover pt-52 pl-20 pb-20 rounded-lg">
             <h1 class="text-5xl font-bold mb-6">Frekuensi Interaksi Karakter</h1>
