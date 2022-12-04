@@ -1,34 +1,38 @@
 import express from 'express';
-import path, { parse, resolve } from 'path';
+import path from 'path';
+
+const publicPath = path.resolve('public');
+const imagesPath = path.resolve(publicPath + '/images');
+const styleSheetsPath = path.resolve(publicPath + '/stylesheets');
 
 const app = express();
-const publicPath = path.resolve('public');
-
-app.set("view engine","ejs");
-
+app.set("view engine", "ejs");
 app.use(express.static(publicPath));
-app.use(express.urlencoded({extended: true}));
+app.use(express.static(imagesPath));
+app.use(express.static(styleSheetsPath));
+app.use(express.urlencoded({ extended: true }));
 
-app.get('/',(req,res)=>{
+
+app.get('/', (req, res) => {
     res.render('home');
 })
 
-app.get('/home',(req,res)=>{
+app.get('/home', (req, res) => {
     res.render('home');
 })
 
-app.get('/pilihbuku',(req,res)=>{
+app.get('/pilih-buku', (req, res) => {
     res.render('pilihBuku');
 })
 
-app.get('/halamangraf',(req,res)=>{
+app.get('/pilih-nama', (req, res) => {
+    res.render('pilihNama');
+})
+
+app.get('/graf', (req, res) => {
     res.render('HalamanGraf');
 })
 
-app.get('/frekuensikarakter',(req,res)=>{
-    res.render('frekuensiKarakter');
-})
-
-app.listen('8080',()=>{
+app.listen('8080', () => {
     console.log("Ready");
 })
