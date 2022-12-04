@@ -14,8 +14,14 @@ module.exports = {
         'poppins': ["'Poppins'", 'sans-serif']
       },
       backgroundImage: {
+<<<<<<< Updated upstream
         'pattern-pilih-nama': "linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0)), url('bgpilihnama.jpg')",
         'pattern-pilih-buku': "linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0)), url('bgpilihbuku.jpg')"
+=======
+        'pattern': "linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0)), url('bgpilihnama.jpg')",
+        'patterna' : "linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0)), url('game-of-thrones-1-1920x10801 - Copy.jpg')",
+        
+>>>>>>> Stashed changes
       },
       borderWidth: {
         '1': "border-width: 1px"
