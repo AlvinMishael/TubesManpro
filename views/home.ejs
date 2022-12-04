@@ -7,53 +7,54 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="header.css">
     <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="output.css">
     <title>Game of Thrones: Home</title>
 </head>
 
-<body>
-    <%- include('./header.ejs')  %>
-    <section>
-        <div id="penjelasan">
-            <img src="game-of-thrones-1-1920x1080.jpg">
-            <div>
+<body class="bg-body font-poppins text-2xl text-text-color">
+    <%- include('./header.ejs') %>
+    <section class="mt-8">
+        <div id="penjelasan" class="rounded-lg mb-24">
+            <img class="rounded-lg" src="game-of-thrones-1-1920x1080.jpg">
+            <div class="rounded-lg">
                 <div>
-                    <h1>Game of Thrones</h1>
-                    <p>Trouble is brewing in Westeros. For the inhabitants of this world, control of the Iron Throne holds the lure of great power. But in a land where seasons can last a lifetime, winter is coming...and beyond the Great Wall that protects them, a forgotten evil has returned. HBO presents this epic series based on the book series A Song of Ice and Fire by George R.R. Martin.</p>
+                    <h1 class="font-bold text-6xl mb-6">Game of Thrones</h1>
+                    <p class="italic">"Trouble is brewing in Westeros. For the inhabitants of this world, control of
+                        the Iron Throne
+                        holds the lure of great power. But in a land where seasons can last a lifetime, winter is
+                        coming...and beyond the Great Wall that protects them, a forgotten evil has returned. HBO
+                        presents this epic series based on the book series A Song of Ice and Fire by George R.R.
+                        Martin."</p>
                 </div>
             </div>
         </div>
-        <h1>Panduan Memahami Game of Thrones</h1>
-        <p>Website ini membantu kalian, para penggemar Game of Thrones, untuk lebih mendalami alur cerita dan
+        <h1 class="font-bold text-5xl mb-6 text-sub-color">Panduan Memahami Game of Thrones!</h1>
+        <p class="px-72 mb-12">Website ini membantu kalian, para penggemar Game of Thrones, untuk lebih mendalami
+            alur cerita dan
             karakter-karakter Game of Thrones dengan tools berikut!</p>
         <div id="fitur-container">
-            <div class="card">
-                <h1>TOP 10 Karakter yang Paling sering Berinteraksi</h1>
+            <div class="flex-col">
+                <h1 class="font-bold text-sub-color">TOP 10 Karakter yang Paling sering Berinteraksi (Pilih Buku)</h1>
                 <p>Kamu dapat mengetahui karakter mana saja yang paling aktif dalam suatu buku Game of Thrones!</p>
-                <button>Mulai</button>
-            </div>
-            <div class="card">
-                <h1>Frekuensi Interaksi Karakter</h1>
-                <p>Kamu dapat mengetahui frekuensi interaksi karakter yang kamu sukai dengan karakter lainnya dalam buku
+                <button class="hidden">Mulai</button>
+            </div> <br>
+            <div>
+                <h1 class="font-bold text-sub-color">Frekuensi Interaksi Karakter (Pilih Nama)</h1>
+                <p>Kamu dapat mengetahui frekuensi interaksi karakter yang kamu sukai dengan karakter lainnya dalam
+                    buku
                     Game of Thrones yang kamu inginkan!</p>
-                <button>Mulai</button>
-            </div>
-            <div class="card">
-                <h1>Graf Interaksi Karakter</h1>
+                <button class="hidden">Mulai</button>
+            </div>  <br>
+            <div>
+                <h1 class="font-bold text-sub-color">Graf Interaksi Karakter (Graf)</h1>
                 <p>Visualisasi interaksi antarkarakter tidak pernah lebih mudah!</p>
                 <p>Kamu juga dapat melihat detail dari interaksi karakter yang kamu inginkan!</p>
-                <button>Mulai</button>
-            </div>
+                <button class="hidden">Mulai</button>
+            </div>  <br>
         </div>
+
     </section>
-    <footer>
-        <p>Dibuat oleh Alvin and The Chipmunks</p>
-        <ul>
-            <li>Alvin Mishael Halim</li>
-            <li>Alexander Bleuvito Fevrier</li>
-            <li>Dearen Hippy</li>
-            <li>William Nehemia</li>
-            </div>
-    </footer>
+    <%- include('footer.ejs') %>
 </body>
 
 </html>

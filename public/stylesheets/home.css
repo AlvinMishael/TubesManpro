@@ -28,14 +28,11 @@ section img+div > div{
 }
 
 #fitur-container {
-    display: flex;
-    justify-content: center;
-    flex-flow: row wrap;
+    padding: 0 308px;
 }
 
 .card {
     width: 40%;
     margin: 4px;
     padding: 12px;
-    border: solid;
 }

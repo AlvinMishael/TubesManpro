@@ -10,8 +10,8 @@ app.set("view engine", "ejs");
 app.use(express.static(publicPath));
 app.use(express.static(imagesPath));
 app.use(express.static(styleSheetsPath));
-app.use(express.urlencoded({ extended: true }));
 app.use(express.static(javaScriptPath));
+app.use(express.urlencoded({ extended: true }));
 
 
 app.get('/', (req, res) => {

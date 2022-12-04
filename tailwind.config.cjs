@@ -14,8 +14,8 @@ module.exports = {
         'poppins': ["'Poppins'", 'sans-serif']
       },
       backgroundImage: {
-        'pattern-pilih-nama': "linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0)), url('bgpilihnama.jpg')",
-        'pattern-pilih-buku': "linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0)), url('bgpilihbuku.jpg')"
+        'pattern-pilih-nama': "linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0)), url('bgpilihnama.webp')",
+        'pattern-pilih-buku': "linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0)), url('bgpilihbuku.jpg')",
       },
       borderWidth: {
         '1': "border-width: 1px"
