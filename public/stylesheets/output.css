@@ -568,6 +568,26 @@ video {
   margin-bottom: 1.5rem;
 }
 
+.ml-4 {
+  margin-left: 1rem;
+}
+
+.ml-6 {
+  margin-left: 1.5rem;
+}
+
+.ml-9 {
+  margin-left: 2.25rem;
+}
+
+.ml-12 {
+  margin-left: 3rem;
+}
+
+.ml-24 {
+  margin-left: 6rem;
+}
+
 .flex {
   display: flex;
 }
@@ -584,17 +604,6 @@ video {
   width: 50%;
 }
 
-<<<<<<< Updated upstream
-=======
-.w-full {
-  width: 100%;
-}
-
-.table-auto {
-  table-layout: auto;
-}
-
->>>>>>> Stashed changes
 .border-collapse {
   border-collapse: collapse;
 }
@@ -629,14 +638,6 @@ video {
   border-width: 1px;
 }
 
-<<<<<<< Updated upstream
-=======
-.border-sub-color {
-  --tw-border-opacity: 1;
-  border-color: rgb(255 102 0 / var(--tw-border-opacity));
-}
-
->>>>>>> Stashed changes
 .border-slate-400 {
   --tw-border-opacity: 1;
   border-color: rgb(148 163 184 / var(--tw-border-opacity));
@@ -667,21 +668,14 @@ video {
   background-color: rgb(248 250 252 / var(--tw-bg-opacity));
 }
 
-<<<<<<< Updated upstream
-.bg-pattern-pilih-nama {
-  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0)), url('bgpilihnama.jpg');
-}
-
 .bg-pattern-pilih-buku {
   background-image: linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0)), url('bgpilihbuku.jpg');
 }
 
-=======
-.bg-pattern {
+.bg-pattern-pilih-nama {
   background-image: linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0)), url('bgpilihnama.jpg');
 }
 
->>>>>>> Stashed changes
 .bg-cover {
   background-size: cover;
 }
@@ -753,14 +747,6 @@ video {
   color: rgb(0 0 0 / var(--tw-text-opacity));
 }
 
-<<<<<<< Updated upstream
-=======
-.text-gray-500 {
-  --tw-text-opacity: 1;
-  color: rgb(107 114 128 / var(--tw-text-opacity));
-}
-
->>>>>>> Stashed changes
 .text-slate-900 {
   --tw-text-opacity: 1;
   color: rgb(15 23 42 / var(--tw-text-opacity));
@@ -817,27 +803,11 @@ video {
     background-color: rgb(30 41 59 / var(--tw-bg-opacity));
   }
 
-<<<<<<< Updated upstream
-=======
-  .dark\:bg-slate-700 {
-    --tw-bg-opacity: 1;
-    background-color: rgb(51 65 85 / var(--tw-bg-opacity));
-  }
-
->>>>>>> Stashed changes
   .dark\:bg-sub-color {
     --tw-bg-opacity: 1;
     background-color: rgb(255 102 0 / var(--tw-bg-opacity));
   }
 
-<<<<<<< Updated upstream
-=======
-  .dark\:text-gray-400 {
-    --tw-text-opacity: 1;
-    color: rgb(156 163 175 / var(--tw-text-opacity));
-  }
-
->>>>>>> Stashed changes
   .dark\:text-slate-200 {
     --tw-text-opacity: 1;
     color: rgb(226 232 240 / var(--tw-text-opacity));
