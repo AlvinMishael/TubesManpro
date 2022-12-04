@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="output.css" />
+    <title>Game of Thrones: Pilih Nama</title>
+  </head>
+
+  <body class="bg-body font-poppins text-2xl text-text-color">
+    <header class="py-6 px-24 mx-auto">
+      <nav>
+        <div class="container flex justify-center mx-auto">
+          <a href="/">
+            <img src="game-of-thrones-fonts-1-removebg-preview.png" />
+          </a>
+        </div>
+        <div id="nav-links" class="flex justify-center space-x-12">
+          <a href="/" class="hover:text-sub-color">Home</a>
+          <a href="/pilih-buku" class="hover:text-sub-color">Pilih Buku</a>
+          <a href="/pilih-nama" class="hover:text-sub-color">Pilih Nama</a>
+          <a href="/graf" class="hover:text-sub-color">Graf</a>
+        </div>
+      </nav>
+    </header>
+    <div id="content-wrapper" class="px-24 mx-auto mt-8">
+      <div
+        id="form-wrapper"
+        class="bg-pattern bg-cover pt-52 pl-20 pb-20 rounded-lg"
+      >
+        <h1 class="text-5xl font-bold mb-6">Frekuensi Interaksi Karakter</h1>
+        <form action="">
+          <div class="grid grid-cols-3 gap-1 w-1/2">
+            <label for="pilih-buku">Pilih buku</label>
+            <select name="buku" id="pilih-buku" class="col-span-2 focus:border-2 focus:border-sub-color rounded-md text-black">
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+            </select>
+            <label for="cari-nama">Cari nama</label>
+            <input type="text" name="nama" id="cari-nama" class="col-span-2 focus:border-2 focus:border-sub-color rounded-md text-black"/>
+            <button type="submit" class="hover:bg-sub-alt-color rounded-lg bg-sub-color col-start-3">Cari</button>
+          </div>
+        </form>
+      </div>
+      <div class="flex justify-center mt-8">
+          <table class="border-collapse w-1/2 border border-slate-400 dark:border-slate-500 bg-white dark:bg-slate-800 text-sm shadow-sm">
+            <thead class="bg-slate-50 dark:bg-sub-color">
+              <tr>
+                <th class="w-1/2 border border-slate-300 dark:border-slate-600 font-semibold p-4 text-slate-900 dark:text-slate-200 text-left">Target</th>
+                <th class="w-1/2 border border-slate-300 dark:border-slate-600 font-semibold p-4 text-slate-900 dark:text-slate-200 text-left">Frekuensi</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                  <td class="border border-slate-300 dark:border-slate-700 p-4 text-slate-500 dark:text-slate-400">Nama</td>
+                  <td class="border border-slate-300 dark:border-slate-700 p-4 text-slate-500 dark:text-slate-400">Frekuensi</td>
+              </tr>
+            </tbody>
+          </table>
+      </div>
+    </div>
+  </body>
+</html>
