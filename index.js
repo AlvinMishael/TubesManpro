@@ -1,5 +1,6 @@
 import express from 'express';
 import path from 'path';
+import mySQL from 'mysql';
 
 const publicPath = path.resolve('public');
 const imagesPath = path.resolve(publicPath + '/images');
@@ -14,7 +15,7 @@ app.use(express.static(javaScriptPath));
 app.use(express.urlencoded({ extended: true }));
 
 
-app.get('/', (req, res) => {
+app.get('/', async (req, res) => {
     res.render('home');
 })
 
@@ -37,3 +38,88 @@ app.get('/graf', (req, res) => {
 app.listen('8080', () => {
     console.log("Ready");
 })
+
+const pool = mySQL.createPool({
+    user: 'root',
+    password: '',
+    database: 'tubes_manpro',
+    host: 'localhost'
+})
+
+const dbConnect = () =>{
+    return new Promise((resolve, reject) => {
+        pool.getConnection((err, conn) => {
+            if (err) {
+                reject(err)
+            } else {
+                resolve(conn)
+            }
+        })
+    })
+}
+
+const getBook1 = async (conn)=>{
+    return new Promise((resolve, reject) => {
+        const stringSql = "SELECT * FROM book1"
+        conn.query(stringSql, (err, res) => {
+            if (err) {
+                reject(err)
+            } else {
+                resolve(res)
+            }
+        })
+    })
+}
+
+const getBook2 = async (conn)=>{
+    return new Promise((resolve, reject) => {
+        const stringSql = "SELECT * FROM book2"
+        conn.query(stringSql, (err, res) => {
+            if (err) {
+                reject(err)
+            } else {
+                resolve(res)
+            }
+        })
+    })
+}
+
+const getBook3 = async (conn)=>{
+    return new Promise((resolve, reject) => {
+        const stringSql = "SELECT * FROM book3"
+        conn.query(stringSql, (err, res) => {
+            if (err) {
+                reject(err)
+            } else {
+                resolve(res)
+            }
+        })
+    })
+}
+
+const getBook4 = async (conn)=>{
+    return new Promise((resolve, reject) => {
+        const stringSql = "SELECT * FROM book4"
+        conn.query(stringSql, (err, res) => {
+            if (err) {
+                reject(err)
+            } else {
+                resolve(res)
+            }
+        })
+    })
+}
+
+const getBook5 = async (conn)=>{
+    return new Promise((resolve, reject) => {
+        const stringSql = "SELECT * FROM book5"
+        conn.query(stringSql, (err, res) => {
+            if (err) {
+                reject(err)
+            } else {
+                resolve(res)
+            }
+        })
+    })
+}
+
