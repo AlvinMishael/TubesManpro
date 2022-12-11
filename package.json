@@ -1,0 +1,35 @@
+{
+  "name": "tugasgit2manpro",
+  "version": "1.0.0",
+  "description": "TesTubesManpro",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js",
+    "tailwind:css": "npx tailwindcss -i ./public/stylesheets/input.css -o ./public/stylesheets/output.css --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AlvinMishael/TubesManpro.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AlvinMishael/TubesManpro/issues"
+  },
+  "homepage": "https://github.com/AlvinMishael/TubesManpro#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.20",
+    "tailwindcss": "^3.2.4",
+    "parcel": "^2.6.2"
+  },
+  "dependencies": {
+    "chart.js": "^4.0.1",
+    "ejs": "^3.1.8",
+    "express": "^4.18.2",
+    "mysql": "^2.18.1",
+    "@cubejs-client/core": "^0.31.0",
+    "chart.js": "^4.0.0"
+  }
+}
