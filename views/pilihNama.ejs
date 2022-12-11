@@ -15,19 +15,19 @@
         <div id="content-wrapper" class="px-24 mx-auto mt-8">
             <div id="form-wrapper" class="bg-pattern-pilih-nama bg-cover pt-52 pl-20 pb-20 rounded-lg">
                 <h1 class="text-5xl font-bold mb-6">Frekuensi Interaksi Karakter</h1>
-                <form action="">
+                <form action="/getData" method="GET">
                     <div class="grid grid-cols-3 gap-1 w-1/2">
                         <label for="pilih-buku">Pilih buku</label>
-                        <select name="buku" id="pilih-buku"
+                        <select name="book" id="pilih-buku"
                             class="col-span-2 focus:border-2 focus:border-sub-color rounded-md text-black">
-                            <option value="1">Buku 1 : A Game of Thrones</option>
-                            <option value="2">Buku 2 : A Clash of Kings</option>
-                            <option value="3">Buku 3 : A Storm of Swords</option>
-                            <option value="4">Buku 4 : A Feast for Crows</option>
-                            <option value="5">Buku 5 : A Dance with Dragons</option>
+                            <option value="book1">Buku 1: A Game of Thrones</option>
+                            <option value="book2">Buku 2: A Clash of Kings</option>
+                            <option value="book3">Buku 3: A Storm of Swords</option>
+                            <option value="book4">Buku 4: A Feast for Crows</option>
+                            <option value="book5">Buku 5: A Dance with Dragons</option>
                         </select>
                         <label for="cari-nama">Cari nama</label>
-                        <input type="text" name="nama" id="cari-nama"
+                        <input type="text" name="character" id="cari-nama"
                             class="col-span-2 focus:border-2 focus:border-sub-color rounded-md text-black" />
                         <button type="submit" class="hover:bg-sub-alt-color rounded-lg bg-sub-color col-start-3">
                             Cari
@@ -35,9 +35,9 @@
                     </div>
                 </form>
             </div>
-            <div class="flex justify-center mt-8">
+            <div class="flex-col justify-center items-center mt-8">
                 <table
-                    class="border-collapse w-1/2 border border-slate-400 dark:border-slate-500 bg-white dark:bg-slate-800 text-sm shadow-sm">
+                    class="mx-auto border-collapse w-1/2 border border-slate-400 dark:border-slate-500 bg-white dark:bg-slate-800 text-sm shadow-sm">
                     <thead class="bg-slate-50 dark:bg-sub-color">
                         <tr>
                             <th
@@ -51,19 +51,33 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td
-                                class="border border-slate-300 dark:border-slate-700 p-4 text-slate-500 dark:text-slate-400">
-                                Nama
-                            </td>
-                            <td
-                                class="border border-slate-300 dark:border-slate-700 p-4 text-slate-500 dark:text-slate-400">
-                                Frekuensi
-                            </td>
-                        </tr>
+                        <% if(data !== null) { %>
+                            <% data.forEach(element => { %>
+                                <tr>
+                                    <td class="border border-slate-300 dark:border-slate-700 p-4 text-slate-500 dark:text-slate-400">
+                                        <%= element.Target %>
+                                    </td>
+                                    <td class="border border-slate-300 dark:border-slate-700 p-4 text-slate-500 dark:text-slate-400">
+                                        <%= element.weight %>
+                                    </td>
+                                </tr>    
+                            <% }) %> 
+                        <% } %>  
                     </tbody>
                 </table>
-                <div class="pagination"></div>
+                <div class="pagination flex justify-center mt-4">
+                    <% if(pageCount !== null) { %> 
+                        <ul class="inline-flex items-center -space-x-px">
+                            <% for( let index = 1; index <= pageCount; index++ ) { %>
+                                <!-- http://localhost:8080/getData?book=book1&character=Eddard-Stark -->
+                                <% let link = '/getData/'+(index-1)*10+'?book='+book+'&character='+character %> 
+                                <li>
+                                    <a href="<%= link %> " class="px-3 py-2 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"><%= index %> </a>
+                                </li>
+                            <% } %>
+                        </ul>
+                    <%}%> 
+                </div>
             </div>
         </div>
         <%- include('footer.ejs') %>
