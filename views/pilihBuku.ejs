@@ -6,11 +6,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script defer src="pilihBuku.js"></script>
+    <script defer src="path/to/chartjs/dist/chart.umd.js"></script>
+    <script  src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
     <link rel="stylesheet" href="output.css" />
     <title>Game of Thrones: Pilih Buku</title>
 </head>
 
-<body class="bg-body font-poppins text-2xl text-text-color  mx-auto">
+<body class="bg-body font-poppins text-2xl text-text-color">
     <%- include('header.ejs') %>
     <div id="content-wrapper" class="px-24 mx-auto mt-8">
         <div id="form-wrapper" class="bg-pattern-pilih-buku bg-cover pt-52 pl-20 pb-20 rounded-lg">
@@ -35,7 +37,133 @@
     </div>
 
     <img src="allBook copy.png" class="mt-8 - ml-24" id="gambarBuku">
+
+    <canvas id="grafik" width="100" height="30" class="ml-24"></canvas>
+    
     <%- include('footer.ejs') %>
 </body>
+
+<!--<script> 
+    console.log(namaBuku1);
+    if(document.getElementById("pilih-buku").value == 1 ){
+        new Chart(document.getElementById("grafik"), {
+    type: 'horizontalBar',
+    data: {
+      labels: namaBuku1,
+      datasets: [
+        {
+          label: "Frekuensi",
+          backgroundColor: ["#ec5800", "#f45b00","#fc5e00","#ff6206","#ffaf7a", "#ff670e", "#ff6d16", "#ff721e", "#ff7726", "#ff7c2e"],
+          data: jumlahBuku1
+        }
+      ]
+    },
+    options: {
+      legend: { display: false },
+      title: {
+        display: false,
+        text: 'Predicted world population (millions) in 2050'
+      }
+    }
+    });
+    }
+    else if (document.getElementById("pilih-buku").value == 2){
+        new Chart(document.getElementById("grafik"), {
+    type: 'horizontalBar',
+    data: {
+      labels: ["Africa", "Asia", "Europe", "Latin America", "North America", "Indonesia", "Malaysia", "Singapore", "Aussie", "Brazil"],
+      datasets: [
+        {
+          label: "Population (millions)",
+          backgroundColor: ["#ec5800", "#f45b00","#fc5e00","#ff6206","#ffaf7a", "#ff670e", "#ff6d16", "#ff721e", "#ff7726", "#ff7c2e"],
+          data: [2478,5267,734,784,433,500, 436, 826, 238, 163]
+        }
+      ]
+    },
+    options: {
+      legend: { display: false },
+      title: {
+        display: false,
+        text: 'Predicted world population (millions) in 2050'
+      }
+    }
+});
+    }
+    else if (document.getElementById("pilih-buku").value == 3){
+        new Chart(document.getElementById("grafik"), {
+    type: 'horizontalBar',
+    data: {
+      labels: ["Africa", "Asia", "Europe", "Latin America", "North America", "Indonesia", "Malaysia", "Singapore", "Aussie", "Brazil"],
+      datasets: [
+        {
+          label: "Population (millions)",
+          backgroundColor: ["#ec5800", "#f45b00","#fc5e00","#ff6206","#ffaf7a", "#ff670e", "#ff6d16", "#ff721e", "#ff7726", "#ff7c2e"],
+          data: [2478,5267,734,784,433,500, 436, 826, 238, 163]
+        }
+      ]
+    },
+    options: {
+      legend: { display: false },
+      title: {
+        display: false,
+        text: 'Predicted world population (millions) in 2050'
+      }
+    }
+});
+    
+    }
+    else if (document.getElementById("pilih-buku").value == 4){
+        new Chart(document.getElementById("grafik"), {
+    type: 'horizontalBar',
+    data: {
+      labels: ["Africa", "Asia", "Europe", "Latin America", "North America", "Indonesia", "Malaysia", "Singapore", "Aussie", "Brazil"],
+      datasets: [
+        {
+          label: "Population (millions)",
+          backgroundColor: ["#ec5800", "#f45b00","#fc5e00","#ff6206","#ffaf7a", "#ff670e", "#ff6d16", "#ff721e", "#ff7726", "#ff7c2e"],
+          data: [2478,5267,734,784,433,500, 436, 826, 238, 163]
+        }
+      ]
+    },
+    options: {
+      legend: { display: false },
+      title: {
+        display: false,
+        text: 'Predicted world population (millions) in 2050'
+      }
+    }
+});
+    }
+    else if (document.getElementById("pilih-buku").value == 5){
+        new Chart(document.getElementById("grafik"), {
+    type: 'horizontalBar',
+    data: {
+      labels: ["Africa", "Asia", "Europe", "Latin America", "North America", "Indonesia", "Malaysia", "Singapore", "Aussie", "Brazil"],
+      datasets: [
+        {
+          label: "Population (millions)",
+          backgroundColor: ["#ec5800", "#f45b00","#fc5e00","#ff6206","#ffaf7a", "#ff670e", "#ff6d16", "#ff721e", "#ff7726", "#ff7c2e"],
+          data: [2478,5267,734,784,433,500, 436, 826, 238, 163]
+        }
+      ]
+    },
+    options: {
+      legend: { display: false },
+      title: {
+        display: false,
+        text: 'Predicted world population (millions) in 2050'
+      }
+    }
+});
+    }
+
+    else{
+        
+    }
+
+    
+    
+    
+    </script>-->
 
 </html>
