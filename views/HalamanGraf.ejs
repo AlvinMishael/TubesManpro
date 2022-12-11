@@ -4,12 +4,23 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="output.css"/>
     <title>Halaman Graf</title>
 </head>
 <body>
     <%- include('header.ejs') %>
     <h1>Ini Halaman Graf</h1>
     <h6>Dibuat oleh Dearen</h6>
+    <div id="graf" onload="">
+        <!-- <canvas id="chart"></canvas> -->
+    </div>
     <%- include('footer.ejs') %>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script
+      type="text/javascript"
+      src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"
+    ></script>
+    <script type="module" src="halamanGraf.js"></script>
 </body>
 </html>
