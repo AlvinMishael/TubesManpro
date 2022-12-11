@@ -25,6 +25,161 @@ app.get('/home', (req, res) => {
 })
 
 app.get('/pilihBuku', (req, res) => {
+
+    /*const conn = await dbConnect();
+    const getTop10NamaCharacterBook1Async = async (conn)=>{
+        return new Promise((resolve, reject) => {
+            const stringSql = "SELECT TOP 10 Source AS ‘Name’ FROM book1 GROUP BY Source ORDER BY SUM(Weight) DESC"
+            conn.query(stringSql, (err, res) => {
+                if (err) {
+                    reject(err)
+                } else {
+                    resolve(res)
+                }
+            })
+        })
+    }
+
+    const getTop10NamaCharacterBook1 = await getTop10NamaCharacterBook1Async(conn)
+
+    console.log(getTop10NamaCharacterBook1)
+    
+    const getTop10JumlahCharacterBook1 = async (conn)=>{
+        return new Promise((resolve, reject) => {
+            const stringSql = "SUM(Weight) AS ‘Jumlah’ FROM book1 GROUP BY Source ORDER BY SUM(Weight) DESC"
+            conn.query(stringSql, (err, res) => {
+                if (err) {
+                    reject(err)
+                } else {
+                    resolve(res)
+                }
+            })
+        })
+    }
+    
+    
+    
+    const getTop10NamaCharacterBook2 = async (conn)=>{
+        return new Promise((resolve, reject) => {
+            const stringSql = "SELECT TOP 10 Source AS ‘Name’ FROM book2 GROUP BY Source ORDER BY SUM(Weight) DESC"
+            conn.query(stringSql, (err, res) => {
+                if (err) {
+                    reject(err)
+                } else {
+                    resolve(res)
+                }
+            })
+        })
+    }
+    
+    const getTop10JumlahCharacterBook2 = async (conn)=>{
+        return new Promise((resolve, reject) => {
+            const stringSql = "SELECT TOP 10 SUM(Weight) AS ‘Jumlah’ FROM book2 GROUP BY Source ORDER BY SUM(Weight) DESC"
+            conn.query(stringSql, (err, res) => {
+                if (err) {
+                    reject(err)
+                } else {
+                    resolve(res)
+                }
+            })
+        })
+    }
+    
+    const getTop10NamaCharacterBook3 = async (conn)=>{
+        return new Promise((resolve, reject) => {
+            const stringSql = "SELECT TOP 10 Source AS ‘Name’ FROM book3 GROUP BY Source ORDER BY SUM(Weight) DESC"
+            conn.query(stringSql, (err, res) => {
+                if (err) {
+                    reject(err)
+                } else {
+                    resolve(res)
+                }
+            })
+        })
+    }
+    
+    const getTop10JumlahCharacterBook3 = async (conn)=>{
+        return new Promise((resolve, reject) => {
+            const stringSql = "SELECT TOP 10 SUM(Weight) AS ‘Jumlah’ FROM book3 GROUP BY Source ORDER BY SUM(Weight) DESC"
+            conn.query(stringSql, (err, res) => {
+                if (err) {
+                    reject(err)
+                } else {
+                    resolve(res)
+                }
+            })
+        })
+    }
+    
+    const getTop10NamaCharacterBook4 = async (conn)=>{
+        return new Promise((resolve, reject) => {
+            const stringSql = "SELECT TOP 10 Source AS ‘Name’ FROM book4 GROUP BY Source ORDER BY SUM(Weight) DESC"
+            conn.query(stringSql, (err, res) => {
+                if (err) {
+                    reject(err)
+                } else {
+                    resolve(res)
+                }
+            })
+        })
+    }
+    
+    const getTop10JumlahCharacterBook4 = async (conn)=>{
+        return new Promise((resolve, reject) => {
+            const stringSql = "SELECT TOP 10 SUM(Weight) AS ‘Jumlah’ FROM book4 GROUP BY Source ORDER BY SUM(Weight) DESC"
+            conn.query(stringSql, (err, res) => {
+                if (err) {
+                    reject(err)
+                } else {
+                    resolve(res)
+                }
+            })
+        })
+    }
+    
+    const getTop10NamaCharacterBook5 = async (conn)=>{
+        return new Promise((resolve, reject) => {
+            const stringSql = "SELECT TOP 10 Source AS ‘Name’ FROM book5 GROUP BY Source ORDER BY SUM(Weight) DESC"
+            conn.query(stringSql, (err, res) => {
+                if (err) {
+                    reject(err)
+                } else {
+                    resolve(res)
+                    console.log(stringSql)
+                }
+            })
+        })
+    }
+    
+    const getTop10JumlahCharacterBook5 = async (conn)=>{
+        return new Promise((resolve, reject) => {
+            const stringSql = "SELECT TOP 10 SUM(Weight) AS ‘Jumlah’ FROM book5 GROUP BY Source ORDER BY SUM(Weight) DESC"
+            conn.query(stringSql, (err, res) => {
+                if (err) {
+                    reject(err)
+                } else {
+                    resolve(res)
+                    console.log(stringSql)
+                }
+            })
+        })
+    }
+
+    res.render('pilihBuku', {
+        namaBuku1 : getTop10NamaCharacterBook1,
+        jumlahBuku1: getTop10JumlahCharacterBook1,
+        namaBuku2 :  getTop10NamaCharacterBook2,
+        jumlahBuku2: getTop10JumlahCharacterBook2,
+        namaBuku3 :  getTop10NamaCharacterBook3,
+        jumlahBuku3: getTop10JumlahCharacterBook3,
+        namaBuku4 :  getTop10NamaCharacterBook4,
+        jumlahBuku4: getTop10JumlahCharacterBook4,
+        namaBuku5 :  getTop10NamaCharacterBook5,
+        jumlahBuku5: getTop10JumlahCharacterBook5
+
+
+    });*/
+
     res.render('pilihBuku');
 })
 
