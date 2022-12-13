@@ -184,7 +184,11 @@ app.get('/pilihBuku', (req, res) => {
 })
 
 app.get('/graf', (req, res) => {
-    res.render('HalamanGraf');
+    res.render("HalamanGraf");
+})
+
+app.post('/grafData', (req, res) => {
+    res.json(["abc","abc","abc"]);
 })
 
 app.listen('8080', () => {

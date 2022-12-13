@@ -1,3 +1,15 @@
+/*fetch('/grafData')
+.then(response => response.json())
+.then((data)=>console.log(data)) */
+
+fetch('/grafData',{
+  method:'post',
+  headers:{"Content-Type":"application/json"}
+})
+.then(response => response.json())
+.then(data=>console.log(data))
+
+
 //input node
 var nodes = new vis.DataSet([
     { id: 1, label: "Dearen" },
