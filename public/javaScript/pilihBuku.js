@@ -33,6 +33,16 @@ console.log(dropDown);
       title: {
         display: false,
         text: 'Predicted world population (millions) in 2050'
+      },
+
+      scales: {
+        xAxes: [{
+          display: true,
+          ticks: {
+              beginAtZero: true
+              
+          }
+        }]
       }
     }
   });
@@ -75,6 +85,15 @@ function change(e){
               title: {
                 display: false,
                 text: 'Predicted world population (millions) in 2050'
+              },
+              scales: {
+                xAxes: [{
+                  display: true,
+                  ticks: {
+                      beginAtZero: true
+                      
+                  }
+                }]
               }
             }
           });
@@ -114,6 +133,15 @@ function change(e){
               title: {
                 display: false,
                 text: 'Predicted world population (millions) in 2050'
+              },
+              scales: {
+                xAxes: [{
+                  display: true,
+                  ticks: {
+                      beginAtZero: true
+                      
+                  }
+                }]
               }
             }
           });
@@ -153,6 +181,15 @@ function change(e){
               title: {
                 display: false,
                 text: 'Predicted world population (millions) in 2050'
+              },
+              scales: {
+                xAxes: [{
+                  display: true,
+                  ticks: {
+                      beginAtZero: true
+                      
+                  }
+                }]
               }
             }
           });
@@ -192,6 +229,15 @@ function change(e){
               title: {
                 display: false,
                 text: 'Predicted world population (millions) in 2050'
+              },
+              scales: {
+                xAxes: [{
+                  display: true,
+                  ticks: {
+                      beginAtZero: true
+                      
+                  }
+                }]
               }
             }
           });
@@ -231,6 +277,15 @@ function change(e){
               title: {
                 display: false,
                 text: 'Predicted world population (millions) in 2050'
+              },
+              scales: {
+                xAxes: [{
+                  display: true,
+                  ticks: {
+                      beginAtZero: true
+                      
+                  }
+                }]
               }
             }
           });
