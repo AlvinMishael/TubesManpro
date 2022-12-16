@@ -184,8 +184,51 @@ app.get('/pilihBuku', (req, res) => {
 })
 
 app.get('/graf', (req, res) => {
-    res.render('HalamanGraf');
+    res.render("HalamanGraf");
 })
+
+app.post('/grafData1',async (req, res) => {
+    const conn = await dbConnect();
+    const result = await getGrafNode(conn,"book1");
+    res.json(result);
+})
+
+app.post('/grafData2',async (req, res) => {
+    const conn = await dbConnect();
+    const result = await getGrafNode(conn,"book2");
+    res.json(result);
+})
+
+app.post('/grafData3',async (req, res) => {
+    const conn = await dbConnect();
+    const result = await getGrafNode(conn,"book3");
+    res.json(result);
+})
+
+app.post('/grafData4',async (req, res) => {
+    const conn = await dbConnect();
+    const result = await getGrafNode(conn,"book4");
+    res.json(result);
+})
+
+app.post('/grafData5',async (req, res) => {
+    const conn = await dbConnect();
+    const result = await getGrafNode(conn,"book5");
+    res.json(result);
+})
+
+const getGrafNode = async (conn,book)=>{
+    return new Promise((resolve, reject) => {
+        const sql = `SELECT * FROM ?? ORDER BY weight DESC LIMIT 10`;
+        conn.query(sql,[book] ,(err, res) => {
+            if (err) {
+                reject(err)
+            } else {
+                resolve(res)
+            }
+        })
+    })
+}
 
 app.listen('8080', () => {
     console.log("Ready");

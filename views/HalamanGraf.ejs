@@ -7,11 +7,25 @@
     <link rel="stylesheet" type="text/css" href="output.css"/>
     <title>Halaman Graf</title>
 </head>
-<body>
+<body class="bg-body font-poppins text-2xl text-text-color">
     <%- include('header.ejs') %>
     <h1>Ini Halaman Graf</h1>
     <h6>Dibuat oleh Dearen</h6>
-    <div id="graf" onload="">
+    <form action="">
+        <div class="grid grid-cols-3 gap-1 w-1/2">
+            <label for="pilih-buku">Pilih buku</label>
+            <select name="buku" id="pilih-buku"
+                class="col-span-2 focus:border-2 focus:border-sub-color rounded-md text-black">
+                <option value="1">Buku 1 : A Game of Thrones </option>
+                <option value="2">Buku 2 : A Clash of Kings</option>
+                <option value="3">Buku 3 : A Storm of Swords</option>
+                <option value="4">Buku 4 : A Feast for Crows</option>
+                <option value="5">Buku 5 : A Dance with Dragons</option>
+            </select>
+
+        </div>
+    </form>
+    <div id="graf" class="h-96 w-full">
         <!-- <canvas id="chart"></canvas> -->
     </div>
     <%- include('footer.ejs') %>
