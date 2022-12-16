@@ -12,6 +12,7 @@ app.use(express.static(publicPath));
 app.use(express.static(imagesPath));
 app.use(express.static(styleSheetsPath));
 app.use(express.static(javaScriptPath));
+app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 
@@ -21,12 +22,10 @@ app.get('/', async (req, res) => {
 
 app.get('/home', (req, res) => {
     res.render('home');
-   
-    
-
 })
 
-app.get('/pilih-buku', async (req, res) => {
+app.get('/pilihBuku', (req, res) => {
+
     /*const conn = await dbConnect();
     const getTop10NamaCharacterBook1Async = async (conn)=>{
         return new Promise((resolve, reject) => {
@@ -180,18 +179,56 @@ app.get('/pilih-buku', async (req, res) => {
 
 
     });*/
+
     res.render('pilihBuku');
-
-
-})
-
-app.get('/pilih-nama', (req, res) => {
-    res.render('pilihNama');
 })
 
 app.get('/graf', (req, res) => {
-    res.render('HalamanGraf');
+    res.render("HalamanGraf");
 })
+
+app.post('/grafData1',async (req, res) => {
+    const conn = await dbConnect();
+    const result = await getGrafNode(conn,"book1");
+    res.json(result);
+})
+
+app.post('/grafData2',async (req, res) => {
+    const conn = await dbConnect();
+    const result = await getGrafNode(conn,"book2");
+    res.json(result);
+})
+
+app.post('/grafData3',async (req, res) => {
+    const conn = await dbConnect();
+    const result = await getGrafNode(conn,"book3");
+    res.json(result);
+})
+
+app.post('/grafData4',async (req, res) => {
+    const conn = await dbConnect();
+    const result = await getGrafNode(conn,"book4");
+    res.json(result);
+})
+
+app.post('/grafData5',async (req, res) => {
+    const conn = await dbConnect();
+    const result = await getGrafNode(conn,"book5");
+    res.json(result);
+})
+
+const getGrafNode = async (conn,book)=>{
+    return new Promise((resolve, reject) => {
+        const sql = `SELECT * FROM ?? ORDER BY weight DESC LIMIT 10`;
+        conn.query(sql,[book] ,(err, res) => {
+            if (err) {
+                reject(err)
+            } else {
+                resolve(res)
+            }
+        })
+    })
+}
 
 app.listen('8080', () => {
     console.log("Ready");
@@ -281,3 +318,78 @@ const getBook5 = async (conn)=>{
     })
 }
 
+
+//fungsi pilih nama
+app.get('/pilihNama', (req, res) => {
+    res.render('pilihNama', {
+        data: null,
+        rowCount: null,
+        pageCount: null
+    });
+})
+
+const getData = async (connection, book, character, page) => {
+    return new Promise((resolve, reject) => {
+        const sql = `SELECT Target, weight FROM ?? WHERE Source=? ORDER BY weight DESC LIMIT ?,10`;
+        connection.query(sql, [book, character, page], (err, res) => {
+            if(err) {
+                reject(err);
+            } else {
+                resolve(res);
+            }
+        });
+    });
+}
+
+const getRowCount = async (connection, book, character, page) => {
+    return new Promise((resolve, reject) => {
+        const sql = `SELECT COUNT(*) as 'jumlahData' FROM book1 WHERE Source=?`;
+        connection.query(sql, [character, page], (err, res) => {
+            if(err) {
+                reject(err);
+            } else {
+                resolve(res);
+            }
+        });
+    });
+}
+
+app.get('/getData/', async (req, res) => {
+    const connection = await dbConnect();
+    const book = req.query.book;
+    const character = req.query.character;
+    const data = await getData(connection, book, character, 1);
+    const rowCount = await getRowCount(connection, book, character);
+    console.log(data);
+    connection.release();
+
+    res.render('pilihNama', {
+        book: book,
+        character: character,
+        data: data,
+        pageCount: getPageCount(rowCount['0'].jumlahData)
+    });
+});
+
+app.get('/getData/:page', async (req, res) => {
+    const connection = await dbConnect();
+    const book = req.query.book;
+    const character = req.query.character;
+    console.log(character)
+    const page = parseInt(req.params.page);
+    const data = await getData(connection, book, character, page);
+    const rowCount = await getRowCount(connection, book, character);
+    console.log("ini rowcount:"+rowCount['0'].jumlahData);
+    connection.release();
+
+    res.render('pilihNama', {
+        book: book,
+        character: character,
+        data: data,
+        pageCount: getPageCount(rowCount['0'].jumlahData)
+    });
+});
+
+const getPageCount = (page) => {
+    return parseInt(page/10);
+}
