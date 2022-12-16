@@ -393,3 +393,33 @@ app.get('/getData/:page', async (req, res) => {
 const getPageCount = (page) => {
     return parseInt(page/10);
 }
+
+app.post('/barData1', async(req,res) => {
+    const conn = await dbConnect();
+    const result = await getGrafNode(conn,"book1");
+    res.json(result);
+})
+
+app.post('/barData2', async(req,res) => {
+    const conn = await dbConnect();
+    const result = await getGrafNode(conn,"book2");
+    res.json(result);
+})
+
+app.post('/barData3', async(req,res) => {
+    const conn = await dbConnect();
+    const result = await getGrafNode(conn,"book3");
+    res.json(result);
+})
+
+app.post('/barData4', async(req,res) => {
+    const conn = await dbConnect();
+    const result = await getGrafNode(conn,"book4");
+    res.json(result);
+})
+
+app.post('/barData5', async(req,res) => {
+    const conn = await dbConnect();
+    const result = await getGrafNode(conn,"book5");
+    res.json(result);
+})
