@@ -3,6 +3,7 @@ console.log(document.getElementById("pilih-buku"));
 const dropDown = document.getElementById('pilih-buku'); 
 console.log(dropDown);
  dropDown.addEventListener('change', change);
+let chart ;
 
  fetch('/barData1',{
   method:'post',
@@ -16,7 +17,8 @@ console.log(dropDown);
     dataLabel[i] = data[i].Source;
     dataFrekuensi[i] = data[i].weight
   }
-  new Chart(document.getElementById("grafik"), {
+  
+  chart = new Chart(document.getElementById("grafik"), {
     type: 'horizontalBar',
     data: {
       labels: dataLabel,
@@ -37,15 +39,19 @@ console.log(dropDown);
 
       scales: {
         xAxes: [{
+          
           display: true,
           ticks: {
               beginAtZero: true
               
           }
-        }]
+        }],
+        
       }
     }
   });
+  
+
 })
 
 function change(e){
@@ -68,7 +74,8 @@ function change(e){
             dataLabel[i] = data[i].Source;
             dataFrekuensi[i] = data[i].weight
           }
-          new Chart(document.getElementById("grafik"), {
+          chart.destroy();
+          chart = new Chart(document.getElementById("grafik"), {
             type: 'horizontalBar',
             data: {
               labels: dataLabel,
@@ -88,15 +95,22 @@ function change(e){
               },
               scales: {
                 xAxes: [{
+                  
                   display: true,
                   ticks: {
                       beginAtZero: true
                       
                   }
-                }]
+                }],
+               
               }
             }
           });
+
+        
+
+        
+
         })
     }
     else if (document.getElementById("pilih-buku").value == 2){
@@ -116,7 +130,8 @@ function change(e){
             dataLabel[i] = data[i].Source;
             dataFrekuensi[i] = data[i].weight
           }
-          new Chart(document.getElementById("grafik"), {
+          chart.destroy();
+          chart =  new Chart(document.getElementById("grafik"), {
             type: 'horizontalBar',
             data: {
               labels: dataLabel,
@@ -145,6 +160,7 @@ function change(e){
               }
             }
           });
+
         })
     }
     else if (document.getElementById("pilih-buku").value == 3){
@@ -164,7 +180,8 @@ function change(e){
             dataLabel[i] = data[i].Source;
             dataFrekuensi[i] = data[i].weight
           }
-          new Chart(document.getElementById("grafik"), {
+          chart.destroy();
+          chart = new Chart(document.getElementById("grafik"), {
             type: 'horizontalBar',
             data: {
               labels: dataLabel,
@@ -212,7 +229,8 @@ function change(e){
             dataLabel[i] = data[i].Source;
             dataFrekuensi[i] = data[i].weight
           }
-          new Chart(document.getElementById("grafik"), {
+          chart.destroy();
+          chart = new Chart(document.getElementById("grafik"), {
             type: 'horizontalBar',
             data: {
               labels: dataLabel,
@@ -260,7 +278,8 @@ function change(e){
             dataLabel[i] = data[i].Source;
             dataFrekuensi[i] = data[i].weight
           }
-          new Chart(document.getElementById("grafik"), {
+          chart.destroy();
+          chart = new Chart(document.getElementById("grafik"), {
             type: 'horizontalBar',
             data: {
               labels: dataLabel,
