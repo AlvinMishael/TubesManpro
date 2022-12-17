@@ -36,7 +36,7 @@
                     </div>
                 </form>
             </div>
-            <div class="flex-col justify-center items-center mt-8">
+            <div id="table-wrapper" class="flex-col justify-center items-center mt-8">
                 <table
                     class="mx-auto border-collapse w-1/2 border border-slate-400 dark:border-slate-500 bg-white dark:bg-slate-800 text-sm shadow-sm">
                     <thead class="bg-slate-50 dark:bg-sub-color">
@@ -52,32 +52,13 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <% if(data !== null) { %>
-                            <% data.forEach(element => { %>
-                                <tr>
-                                    <td class="border border-slate-300 dark:border-slate-700 p-4 text-slate-500 dark:text-slate-400">
-                                        <%= element.Target %>
-                                    </td>
-                                    <td class="border border-slate-300 dark:border-slate-700 p-4 text-slate-500 dark:text-slate-400">
-                                        <%= element.weight %>
-                                    </td>
-                                </tr>    
-                            <% }) %> 
-                        <% } %>  
+                        
                     </tbody>
                 </table>
                 <div class="pagination flex justify-center mt-4">
-                    <% if(pageCount !== null) { %> 
-                        <ul class="inline-flex items-center -space-x-px">
-                            <% for( let index = 1; index <= pageCount; index++ ) { %>
-                                <!-- http://localhost:8080/getData?book=book1&character=Eddard-Stark -->
-                                <% let link = '/getData/'+(index-1)*10+'?book='+book+'&character='+character %> 
-                                <li>
-                                    <a href="<%= link %> " class="px-3 py-2 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"><%= index %> </a>
-                                </li>
-                            <% } %>
-                        </ul>
-                    <%}%> 
+                    <ul  id="pagination-wrapper" class="inline-flex items-center -space-x-px">
+                        
+                    </ul>
                 </div>
             </div>
         </div>
