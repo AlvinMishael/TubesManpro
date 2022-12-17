@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <link rel="stylesheet" href="output.css" />
+    <script defer src="pilihNama.js"></script>
     <title>Game of Thrones: Pilih Nama</title>
 </head>
 
@@ -15,7 +16,7 @@
         <div id="content-wrapper" class="px-24 mx-auto mt-8">
             <div id="form-wrapper" class="bg-pattern-pilih-nama bg-cover pt-52 pl-20 pb-20 rounded-lg">
                 <h1 class="text-5xl font-bold mb-6">Frekuensi Interaksi Karakter</h1>
-                <form action="/getData" method="GET">
+                <form>
                     <div class="grid grid-cols-3 gap-1 w-1/2">
                         <label for="pilih-buku">Pilih buku</label>
                         <select name="book" id="pilih-buku"
@@ -29,7 +30,7 @@
                         <label for="cari-nama">Cari nama</label>
                         <input type="text" name="character" id="cari-nama"
                             class="col-span-2 focus:border-2 focus:border-sub-color rounded-md text-black" />
-                        <button type="submit" class="hover:bg-sub-alt-color rounded-lg bg-sub-color col-start-3">
+                        <button id="btn-submit" type="submit" class="hover:bg-sub-alt-color rounded-lg bg-sub-color col-start-3">
                             Cari
                         </button>
                     </div>
