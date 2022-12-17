@@ -85,7 +85,11 @@ const createTable = (data) => {
         }
     } else {
         html += `
-
+        <tr>
+            <td colspan="2" class="border border-slate-300 dark:border-slate-700 p-4 text-slate-500 dark:text-slate-400">
+                Data tidak tersedia. Mohon cek kebenaran input nama karakter!
+            </td>
+        </tr>
         `
     }
     table.innerHTML =  html;
