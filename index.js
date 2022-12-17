@@ -1,6 +1,7 @@
 import express from 'express';
 import path from 'path';
 import mySQL from 'mysql';
+import { stringify } from 'querystring';
 
 const publicPath = path.resolve('public');
 const imagesPath = path.resolve(publicPath + '/images');
@@ -327,11 +328,23 @@ app.get('/pilihNama', (req, res) => {
         pageCount: null
     });
 })
+const getJumlahData = (connection, book, character) => {
+    return new Promise((resolve, reject) => {
+        const sql = `SELECT COUNT(*) as 'dataCount' FROM ?? WHERE Source=?`;
+        connection.query(sql, [book, character], (err, res) => {
+            if(err) {
+                reject(err);
+            } else {
+                resolve(res);
+            }
+        });
+    });
+}
 
 const getData = async (connection, book, character, page) => {
     return new Promise((resolve, reject) => {
-        const sql = `SELECT Target, weight FROM ?? WHERE Source=? ORDER BY weight DESC LIMIT ?,10`;
-        connection.query(sql, [book, character, page], (err, res) => {
+        const sql = 'SELECT Target, weight FROM ?? WHERE Source=? ORDER BY weight DESC LIMIT ?,10';
+        connection.query(sql, [book, character, parseInt(page)], (err, res) => {
             if(err) {
                 reject(err);
             } else {
@@ -341,58 +354,48 @@ const getData = async (connection, book, character, page) => {
     });
 }
 
-const getRowCount = async (connection, book, character, page) => {
-    return new Promise((resolve, reject) => {
-        const sql = `SELECT COUNT(*) as 'jumlahData' FROM book1 WHERE Source=?`;
-        connection.query(sql, [character, page], (err, res) => {
-            if(err) {
-                reject(err);
-            } else {
-                resolve(res);
-            }
-        });
-    });
-}
 
-app.get('/getData/', async (req, res) => {
+app.get('/getData/:book', async (req, res) => {
     const connection = await dbConnect();
-    const book = req.query.book;
+    const book = req.params.book;
+    //console.log('book: '+book);
     const character = req.query.character;
-    const data = await getData(connection, book, character, 1);
-    const rowCount = await getRowCount(connection, book, character);
-    console.log(data);
+    //console.log('character: '+character);
+    const page = req.query.page;
+    //console.log('page: '+page);
+
+    const characters = await getData(connection, book, character, page);
+    //console.log(characters);
+    let links = [];
+    const dataCount = await getJumlahData(connection, book, character);
+    const pageCount = Math.ceil(dataCount[0].dataCount/10.0);
+    //console.log('pageCount: '+pageCount)
+    for (let i = 0; i < pageCount; i++) {
+        const bookUri = '/' + book + '?';
+        const chararterUri = 'character=' + character;
+        const pageUri = 'page=' + (i*10);
+
+        const APPEND = '&';
+
+        const uri = '/getData' + bookUri + chararterUri + APPEND + pageUri;
+        links.push(uri);
+    }
+
+    //console.log('links: '+links);
+
     connection.release();
 
-    res.render('pilihNama', {
-        book: book,
-        character: character,
-        data: data,
-        pageCount: getPageCount(rowCount['0'].jumlahData)
-    });
+    const data = {
+        characters: characters,
+        pagination: {
+            dataCount: dataCount[0].dataCount,
+            pageCount: pageCount,
+            links: links
+        }
+    }
+
+    res.json(data);
 });
-
-app.get('/getData/:page', async (req, res) => {
-    const connection = await dbConnect();
-    const book = req.query.book;
-    const character = req.query.character;
-    console.log(character)
-    const page = parseInt(req.params.page);
-    const data = await getData(connection, book, character, page);
-    const rowCount = await getRowCount(connection, book, character);
-    console.log("ini rowcount:"+rowCount['0'].jumlahData);
-    connection.release();
-
-    res.render('pilihNama', {
-        book: book,
-        character: character,
-        data: data,
-        pageCount: getPageCount(rowCount['0'].jumlahData)
-    });
-});
-
-const getPageCount = (page) => {
-    return parseInt(page/10);
-}
 
 app.post('/barData1', async(req,res) => {
     const conn = await dbConnect();
